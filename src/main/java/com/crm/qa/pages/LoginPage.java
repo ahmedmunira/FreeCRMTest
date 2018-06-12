@@ -15,10 +15,10 @@ public class LoginPage extends TestBase{
 	//Page Factory - OR:
 	@FindBy(name="username")
 	WebElement username;
-	
+
 	@FindBy(name="password")
 	WebElement password;
-	
+
 	@FindBy(xpath="//input[@type='submit']")
 	WebElement loginBtn;
 	
@@ -42,34 +42,19 @@ public class LoginPage extends TestBase{
 		return crmLogo.isDisplayed();
 	}
 	
-	public HomePage login(String un, String pwd){
+	public HomePage login(String un, String pwd) throws InterruptedException {
+		Thread.sleep(2000);
 		username.sendKeys(un);
+		Thread.sleep(2000);
 		password.sendKeys(pwd);
-		//loginBtn.click();
-		    	JavascriptExecutor js = (JavascriptExecutor)driver;
-		    	js.executeScript("arguments[0].click();", loginBtn);
+		Thread.sleep(2000);
+		loginBtn.click();
+
+		    	/*JavascriptExecutor js = (JavascriptExecutor)driver;
+		    	js.executeScript("arguments[0].click();", loginBtn);*/
 		    	
-		    	
-		    
-		
-		return new HomePage();
+		    	return new HomePage();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 }

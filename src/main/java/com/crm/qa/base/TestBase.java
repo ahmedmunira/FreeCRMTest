@@ -40,11 +40,11 @@ public class TestBase {
 	public static void initialization() {
 		String browserName = prop.getProperty("browser");
 
-		if (browserName.equals("chrome")) {
+		if (browserName.equalsIgnoreCase("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
 			driver = new ChromeDriver();
-		} else if (browserName.equals("FF")) {
+		} else if (browserName.equalsIgnoreCase("Firefox")) {
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/drivers/geckodriver");
 			driver = new FirefoxDriver();
 		}
